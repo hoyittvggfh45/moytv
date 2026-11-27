@@ -162,6 +162,13 @@ const Map<String, String> pySiteHomepages = {
   'yayazy': 'https://cj.yayazy.net',
   'yuanlibzy': 'https://yuanlib.com',
   'zuidazy': 'https://api.zuidapi.com',
+  // 分区内置批（2026-11-27）：片库新内置 6 站主页。
+  'eporner': 'https://www.eporner.com',
+  '91porn': 'https://91porn.com',
+  'fyptt': 'https://fyptt.to',
+  'redgifs': 'https://www.redgifs.com',
+  'soopshort': 'https://vod.sooplive.co.kr',
+  'popkonshort': 'https://www.popkontv.com',
 };
 
 /// Go 核站（Dart 站 id → 槽位 HomeURL origin）。

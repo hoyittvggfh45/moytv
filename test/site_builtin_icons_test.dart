@@ -63,7 +63,10 @@ void main() {
     // 注册表计数：2026-11-22 MissAV 单站内置——
     // 图标只配站，不加站；BuiltinPySites +1（missav 新站），
     // zakatvBuiltinSites -1（missav30 jar 已摘）。
-    expect(BuiltinPySites.entries.length, 125);
+    // 2026-11-27 分区内置批：片库 +6（eporner/91porn/fyptt/redgifs/
+    // soopshort/popkonshort）。注：本断言在基线 c88ee60 已存量失败
+    // （写死 125、实际 126），本次按实际值订正为 132。
+    expect(BuiltinPySites.entries.length, 132);
     expect(zakatvBuiltinSites.length, 137);
     expect(builtinLegadoSources.length, 101);
   });

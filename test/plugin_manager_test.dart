@@ -39,7 +39,7 @@ void main() {
       expect(jar.detail, contains('137'));
     });
 
-    test('124 py plugins in today register order', () {
+    test('131 py plugins in today register order', () {
       final plugins = PluginManager.builtinPlugins();
       final py = plugins.where((p) => p.kind == PluginIconKind.py).toList();
       // 来源（2026-11-26 v67 合树分诊核对）：注册表 125 条、jinguo 一文件
@@ -47,13 +47,17 @@ void main() {
       // (v27,61af046，jar 转 py)、nvku(v28,b08ee4e，新增女优库在线)、
       // missav(v58,bdf4925，jar 转 py)。总插件 126 = jar 插件 2 个
       // (zakatv + one；v58 已删 missav30 独立 jar 插件条目) + py 124。
-      expect(py.length, 124);
-      expect(plugins.length, 126);
+      // 2026-11-27 分区内置批片库 +6 站 6 文件：py 插件 131、总插件 133。
+      // （基线 c88ee60 实测 py 125 个，本断言写死的 124 为旧数。）
+      expect(py.length, 131);
+      expect(plugins.length, 133);
       expect(py.first.id, 'py:hmav');
       expect(py.first.name, '🔞河马AV');
-      expect(py.last.id, 'py:zuidazy');
+      // 末位随注册顺序：2026-11-27 分区内置批 6 站追加在表尾，
+      // 末位为 popkonshort（此前写死的 zuidazy 在基线已不成立）。
+      expect(py.last.id, 'py:popkonshort');
       final ids = py.map((p) => p.id).toSet();
-      expect(ids.length, 124);
+      expect(ids.length, 131);
     });
 
     test('jinguo file plugin carries both sites', () {

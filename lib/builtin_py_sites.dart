@@ -1674,6 +1674,98 @@ class BuiltinPySites {
     importExt: '{"host": "https://1anime.me", "mode": "api", "name": "漫果"}',
   );
 
+  /// 分区内置批（2026-11-27 用户令）：Hentai-Park 对账后我方逐站重写并
+  /// 全链验过的站按区内置。以下 6 站进片库（视频分区）。
+  /// Eporner：分类 84 全链验过；偶发地区年龄墙，蜘蛛内有重试与接口兜底。
+  static const epornerSiteId = 'eporner';
+  static const epornerAssetPath = 'assets/py_spiders/eporner.py';
+  static const epornerFileId = 'builtin_eporner';
+
+  static const epornerSite = SourceSite(
+    epornerSiteId,
+    '🔞Eporner',
+    '内置 py · eporner',
+    section: SourceSite.sectionVideo,
+    origin: SourceSite.originBuiltin,
+    importType: 'py',
+  );
+
+  /// 91视频：py 全链验过（分类 11、playerContent 带令牌 MP4 直链实测
+  /// 206）；站方 3 天内新片仅登录会员，蜘蛛对受限片抛带原因错误，只做
+  /// 免费部分。插件形态验证台最后一步曾被本机 Node fetch 环境卡住，
+  /// 同址 curl/urllib 直连均 206，与内置 py 无关。
+  static const porn91SiteId = '91porn';
+  static const porn91AssetPath = 'assets/py_spiders/91porn.py';
+  static const porn91FileId = 'builtin_91porn';
+
+  static const porn91Site = SourceSite(
+    porn91SiteId,
+    '🔞91视频',
+    '内置 py · 91porn',
+    section: SourceSite.sectionVideo,
+    origin: SourceSite.originBuiltin,
+    importType: 'py',
+  );
+
+  /// Fyptt：竖屏短视频，分类 12 与站导航 1:1，全链验过。
+  static const fypttSiteId = 'fyptt';
+  static const fypttAssetPath = 'assets/py_spiders/fyptt.py';
+  static const fypttFileId = 'builtin_fyptt';
+
+  static const fypttSite = SourceSite(
+    fypttSiteId,
+    '🔞Fyptt',
+    '内置 py · fyptt',
+    section: SourceSite.sectionVideo,
+    origin: SourceSite.originBuiltin,
+    importType: 'py',
+  );
+
+  /// RedGifs：官方接口，分类 niches 全链验过；临时令牌绑请求 IP，
+  /// App 内单连接使用正常。
+  static const redgifsSiteId = 'redgifs';
+  static const redgifsAssetPath = 'assets/py_spiders/redgifs.py';
+  static const redgifsFileId = 'builtin_redgifs';
+
+  static const redgifsSite = SourceSite(
+    redgifsSiteId,
+    '🔞RedGifs',
+    '内置 py · redgifs',
+    section: SourceSite.sectionVideo,
+    origin: SourceSite.originBuiltin,
+    importType: 'py',
+  );
+
+  /// SOOP短视频：韩系竖屏短片，官方搜索/详情接口取 .smil/manifest，
+  /// 全链验过；分类 2（性感舞蹈/比基尼，仓库第三个标签流实测无货未落）。
+  static const soopshortSiteId = 'soopshort';
+  static const soopshortAssetPath = 'assets/py_spiders/soopshort.py';
+  static const soopshortFileId = 'builtin_soopshort';
+
+  static const soopshortSite = SourceSite(
+    soopshortSiteId,
+    '🔞SOOP短视频',
+    '内置 py · soopshort',
+    section: SourceSite.sectionVideo,
+    origin: SourceSite.originBuiltin,
+    importType: 'py',
+  );
+
+  /// PopkonTV短视频：韩系主播竖屏短片，接口全表取数、MP4 直链实测
+  /// 206，全链验过；分类 1（推荐流），搜索走全表扫描本地过滤。
+  static const popkonshortSiteId = 'popkonshort';
+  static const popkonshortAssetPath = 'assets/py_spiders/popkonshort.py';
+  static const popkonshortFileId = 'builtin_popkonshort';
+
+  static const popkonshortSite = SourceSite(
+    popkonshortSiteId,
+    '🔞PopkonTV短视频',
+    '内置 py · popkonshort',
+    section: SourceSite.sectionVideo,
+    origin: SourceSite.originBuiltin,
+    importType: 'py',
+  );
+
   /// 全部内置 py 插件条目，顺序与今天 register() 的注册顺序一致。
   static const List<BuiltinPyEntry> entries = [
     BuiltinPyEntry(
@@ -2431,6 +2523,42 @@ class BuiltinPySites {
       site: zgjManmanSite,
       assetPath: zgjManmanAssetPath,
       fileId: zgjManmanFileId,
+    ),
+    BuiltinPyEntry(
+      siteId: epornerSiteId,
+      site: epornerSite,
+      assetPath: epornerAssetPath,
+      fileId: epornerFileId,
+    ),
+    BuiltinPyEntry(
+      siteId: porn91SiteId,
+      site: porn91Site,
+      assetPath: porn91AssetPath,
+      fileId: porn91FileId,
+    ),
+    BuiltinPyEntry(
+      siteId: fypttSiteId,
+      site: fypttSite,
+      assetPath: fypttAssetPath,
+      fileId: fypttFileId,
+    ),
+    BuiltinPyEntry(
+      siteId: redgifsSiteId,
+      site: redgifsSite,
+      assetPath: redgifsAssetPath,
+      fileId: redgifsFileId,
+    ),
+    BuiltinPyEntry(
+      siteId: soopshortSiteId,
+      site: soopshortSite,
+      assetPath: soopshortAssetPath,
+      fileId: soopshortFileId,
+    ),
+    BuiltinPyEntry(
+      siteId: popkonshortSiteId,
+      site: popkonshortSite,
+      assetPath: popkonshortAssetPath,
+      fileId: popkonshortFileId,
     ),
   ];
 
